@@ -1,13 +1,13 @@
 <div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Assignment - 1</h5>
-    <hr />
-    <p class="card-text" [style.color]="textColor">
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </p>
-    <button type="button" class="btn btn-danger">Red</button>
-    <button type="button" class="btn btn-success">Green</button>
-    <button type="button" class="btn btn-primary">Blue</button>
-  </div>
+	<div class="card-body">
+		<h5 class="card-title">Assignment - 1</h5>
+		<hr />
+		<p class="card-text" (click)="changeColor()" [style.color]="styleColor">
+			Some quick example text to build on the card title and make up the bulk of
+			the card's content.
+		</p>
+		<button type="button" class="btn btn-danger" (click) = "textColor = 'red'">Red</button>
+		<button type="button" class="btn btn-success" (click) = "textColor = 'green'">Green</button>
+		<button type="button" class="btn btn-primary" (click) = "textColor = 'blue'">Blue</button>
+	</div>
 </div>
