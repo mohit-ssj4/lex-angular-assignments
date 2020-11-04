@@ -12,4 +12,6 @@ export class Assignment1Component implements OnInit {
   ngOnInit() {
   }
 
+  textColor:string = 'Red';
+
 }
