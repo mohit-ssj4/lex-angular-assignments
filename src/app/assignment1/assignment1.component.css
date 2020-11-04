@@ -2,3 +2,8 @@ button {
   margin-right: 1em;
   width: 100px;
 }
+
+.card-text {
+  cursor: pointer;
+  padding: 1em 0 1em 0;
+}
