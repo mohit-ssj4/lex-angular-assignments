@@ -1,0 +1,29 @@
+<div class="card">
+	<div class="card-body">
+		<h5 class="card-title">Assignment - 2</h5>
+		<hr />
+		<div class="card-text">
+			<table class="table table-bordered table-hover align-middle">
+				<tbody>
+					<tr *ngFor="let product of productArr">
+						<td>
+							<button type="button" class="btn btn-danger form-control btn-text"><i class="fas fa-trash-alt"></i>Delete</button>
+						</td>
+						<td>{{product.id}}</td>
+						<td>{{product.name}}</td>
+						<td>{{product.price}}</td>
+						<td>
+							<input class="form-control quantity" (change)="validateQuantity($event, product.id)" type="number" value="{{product.quantity}}" min="1">
+						</td>
+						<td *ngIf="showError && id == product.id">
+							<span class="text-danger">Please enter a quanity</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="card-text">
+			The total price is: {{totalPrice}}
+		</div>
+	</div>
+</div>
