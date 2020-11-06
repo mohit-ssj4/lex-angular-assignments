@@ -21,23 +21,38 @@ export class Assignment2Component implements OnInit {
   totalPrice: number = 0;
   quantity: number = 1;
   element: any;
+  discount: boolean = false;
 
   constructor() {}
 
   ngOnInit() {
+    this.totalPrice = 0;
     for (let i = 0; i < this.productArr.length; i++) {
       this.totalPrice =
         this.totalPrice +
         this.productArr[i].price * this.productArr[i].quantity;
     }
+
+    if (this.totalPrice > 100000) {
+      this.discount = true;
+    } else {
+      this.discount = false;
+    }
   }
 
-  validateQuantity(event, id) {
+  validateQuantity(event, id, index) {
+    this.productArr[index].quantity = event.target.value;
+    this.ngOnInit();
     this.id = id;
     if (event.target.value) {
       this.showError = false;
     } else {
       this.showError = true;
     }
+  }
+
+  delete(index) {
+    this.productArr.splice(index, 1);
+    this.ngOnInit();
   }
 }
