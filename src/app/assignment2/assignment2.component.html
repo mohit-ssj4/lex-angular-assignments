@@ -32,7 +32,7 @@
 			</table>
 		</div>
 		<div class="card-text">
-			<span>The total price is: {{totalPrice}}</span><br/>
+			<span>The total price is: {{totalPrice | currency: 'INR'}}</span><br/>
 			<span class="text-success" *ngIf="discount">You are eligible for discount!</span>
 		</div>
 	</div>
